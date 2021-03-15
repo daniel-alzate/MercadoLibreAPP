@@ -12,3 +12,15 @@ export const getCategories = async () => {
         throw Error(error.message)
     }
 }
+
+export const getProductsByCategory = async (category: string) => {
+    try {
+        const URL = `${BASE_URL}/sites/${SITE_ID}/search?category=${category}`
+        const response = await fetch(URL)
+        const responseJson = await response.json()
+        return responseJson.results
+    } catch (error) {
+        console.error(error, 'fail getProductsByCategory request')
+        throw Error(error.message)
+    }
+}
