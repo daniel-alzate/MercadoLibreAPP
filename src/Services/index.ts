@@ -18,8 +18,8 @@ export const getProducts = async (search: string) => {
         const URL = `${BASE_URL}/sites/${SITE_ID}/search?q=${search}`
         const response = await fetch(URL)
         const responseJson = await response.json()
-        return responseJson.results  
-      } catch (error) {
+        return responseJson.results
+    } catch (error) {
         console.error(error, 'fail getProducts request')
         throw Error(error.message)
     }
@@ -34,5 +34,31 @@ export const getProductsByCategory = async (category: string) => {
     } catch (error) {
         console.error(error, 'fail getProductsByCategory request')
         throw Error(error.message)
+    }
+}
+
+export const getProductDetail = async (id: string) => {
+    try {
+        const URL = `${BASE_URL}/items/${id}`
+        const response = await fetch(URL)
+        const responseJson = await response.json()
+        return responseJson
+    } catch (error) {
+        console.error(error, 'fail getProductDetail request')
+        throw Error(error.message)
+
+    }
+}
+
+export const getProductDescription = async (id: string) => {
+    try {
+        const URL = `${BASE_URL}/items/${id}/description`
+        const response = await fetch(URL)
+        const responseJson = await response.json()
+        return responseJson.plain_text
+    } catch (error) {
+        console.error(error, 'fail getProductDescription request')
+        throw Error(error.message)
+
     }
 }
