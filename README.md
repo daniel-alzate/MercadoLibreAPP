@@ -3,9 +3,9 @@
 MercadoLibreAPP es una aplicación que permite consultar una lista de artículos por categoria. Además presenta un detalle de los artículos con su descripción.
 
 <div style="display:flex;flex-direction:row;justify-content: space-between">
-    <img src="screenshots/1.jpeg" alt="screen_01" height="450" />
-    <img src="screenshots/2.jpeg" alt="screen_02" height="450" />
-    <img src="screenshots/3.jpeg" alt="screen_03" height="450" />
+    <img src="screenshots/1.png" alt="screen_01" height="450" />
+    <img src="screenshots/2.png" alt="screen_02" height="450" />
+    <img src="screenshots/3.png" alt="screen_03" height="450" />
 </div>
 
 ### Inicio
