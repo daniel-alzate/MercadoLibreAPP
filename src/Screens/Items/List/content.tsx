@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ItemCard from '../../../Components/Items/Card'
-import { getProductsByCategory } from '../../../Services'
+import { getProducts, getProductsByCategory } from '../../../Services'
 import styles from './style'
 import {
   View,
@@ -20,7 +20,9 @@ export default class ItemList extends Component<ItemsListProps, ItemsListState> 
     const { search = "", id = "" } = { ...this.props.navigation.state.params }
     if (id !== "") {
       getProductsByCategory(id).then(items => this.setState({ items: items }));
-    } 
+    } else {
+      getProducts(search).then(items => this.setState({ items: items }));
+    }
   }
 
   render() {

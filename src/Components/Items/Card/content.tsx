@@ -5,6 +5,7 @@ import { ItemCardProps } from './interface'
 import Util from './../../../Util'
 
 export default ({title = "", thumbnail = "", price = 0, installments={}, onSelectItem }: ItemCardProps) => {
+  const { quantity = 0, amount = 0 } = { ...installments }
 
   return (
     <TouchableOpacity style={styles.container} onPress={() => onSelectItem()}
@@ -16,7 +17,7 @@ export default ({title = "", thumbnail = "", price = 0, installments={}, onSelec
           <Text style={styles.boldFont}>
             {Util.currencyFormat(price)}
           </Text>
-          <Text>{`en ${installments.quantity}x $ ${installments.amount}`}</Text>
+          <Text>{`en ${quantity}x $ ${amount}`}</Text>
         </View>
       </View>
     </TouchableOpacity>
